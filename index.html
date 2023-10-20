@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styled.css">
+    <link rel="stylesheet" href="./css/styled.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container-header">
+            <div class="logo">
+                <img src="./img/teste.png" alt="logo">
+            </div>
+            <div class="search"></div>
+            <div class="user">
+                Área usuário
+                <i class="fa-regular fa-user"></i>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="principal">
+            <div class="left-area">
+                <ul>
+                    <li>Produtos</li>
+                    <li>Vendas</li>
+                    <li>Analitics</li>
+                </ul>
+            </div>
+            <div class="principal-main">
+                <div class="header-principal">
+                    <h2>Teste de sistema de estoque</h2>
+                </div>
+                <div class="btn-area">
+                    <div class="btnAdd">
+                        <button id="addProductBtn">Adicionar Produto</button>
+                    </div>
+                    <div>
+                        <label for="filterInput">Procurar Produto:</label>
+                        <input type="text" id="filterInput" placeholder="pesquisar">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div id="productModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2 id="modalTitle"></h2>
+                        <form id="productForm">
+                            <label for="productName">Nome do Produto:</label>
+                            <input type="text" id="productName" required><br>
+                            <label for="productDescription">Descrição:</label>
+                            <textarea id="productDescription" required></textarea><br>
+                            <label for="productQuantity">Quantidade:</label>
+                            <input type="number" id="productQuantity" required><br>
+                            <label for="productCostPrice">Preço de Custo:</label>
+                            <input type="number" id="productCostPrice" step="0.01" required><br>
+                            <label for="productSalePrice">Preço de Venda:</label>
+                            <input type="number" id="productSalePrice" step="0.01" required><br>
+                            <label for="productImage">Imagem do Produto:</label>
+                            <input type="text" id="productImage" required><br>
+                            <button type="submit">Salvar</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="saleModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Venda de Produto</h2>
+                        <p>Informe a quantidade de produtos a serem vendidos:</p>
+                        <input type="number" id="saleQuantity" min="1" required>
+                        <button id="saleBtn">Vender</button>
+                    </div>
+                </div>
+                <table id="productTable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Quantidade</th>
+                            <th>Preço de Custo</th>
+                            <th>Preço de Venda</th>
+                            <th>Imagem</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+   <!-- <h2>Produtos Vendidos</h2>
+    <ul id="soldProductsList"></ul>-->
+    <script src="./js/script.js"></script>
+</body>
+</html>
